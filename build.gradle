@@ -1,0 +1,36 @@
+buildscript {
+	ext {
+		kotlinVersion = '1.1.51'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {	
+		classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
+	}
+}
+
+apply plugin: 'kotlin'
+
+group = 'com.nklmish'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+compileKotlin {
+	kotlinOptions.jvmTarget = "1.8"
+	kotlinOptions.freeCompilerArgs = ["-Xjsr305=strict"]
+}
+compileTestKotlin {
+	kotlinOptions.jvmTarget = "1.8"
+}
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile("org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}")
+	compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
+	compile group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.2'
+}
