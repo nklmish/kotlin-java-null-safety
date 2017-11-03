@@ -8,7 +8,7 @@ fun main(args: Array<String>) {
     val greet = Message().greet("John")
     println(greet)
 
-//    val greetWithCompilationError1 : String = Message().greet(null) //uncomment this to see compilation error (we are passing null for a non-nullable parameter)
+    val greetWithCompilationError1 : String = Message().greet(null) //uncomment this to see compilation error (we are passing null for a non-nullable parameter)
 
 //    val greetWithCompilationError2 : String = Message().greet2("John") //uncomment this to see compilation error(type mismatch)
 
